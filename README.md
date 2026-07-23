@@ -1,10 +1,8 @@
 # Student Demo Registration System
 
-## Overview
+My project is a student demo registration website built using Node.js, Express, and MySQL. It allows students to sign up for a project demonstration time slot and stores their information in a MySQL database.
 
-This project is a Node.js/Express/MySQL web application created for the Student Demo Registration assignment.
-
-The application allows students to register for project demonstration time slots. Students must provide:
+Each student will enter their:
 
 * Student ID
 * First Name
@@ -12,18 +10,16 @@ The application allows students to register for project demonstration time slots
 * Project Title
 * Email Address
 * Phone Number
-* Demonstration Time Slot
+* Time Slot
 
-Each demonstration time slot has a maximum capacity of six students. The system automatically tracks available seats and prevents students from registering for fully booked time slots.
+Each time slot has a maximum of six students. The website keeps track of how many seats are left and marks a time slot as full when there are no more available seats. If a student tries to register again using the same student ID, the website asks if they want to update their registration instead of creating a duplicate record.
 
-If a student has already registered using their student ID, the system detects the existing registration and allows the student to update their registration information and select a different time slot.
+------
 
----
+## Technologies Used
 
-# Technologies Used
-
-* HTML5
-* CSS3
+* HTML
+* CSS
 * JavaScript
 * Node.js
 * Express.js
@@ -31,9 +27,9 @@ If a student has already registered using their student ID, the system detects t
 
 ---
 
-# Project Structure
+## Project Structure
 
-```
+```text
 student-demo-registration/
 
 server.js
@@ -43,56 +39,34 @@ package.json
 package-lock.json
 README.md
 
-(folder) routes/
-   -registration.js
+routes/
+    registration.js
 
-(folder)public/
-    - index.html
-    -students.html
-    -script.js
-    -styles.css
+public/
+    index.html
+    students.html
+    script.js
+    styles.css
 ```
 
 ---
 
-# Database Setup
+## Database Setup
 
-The project uses a MySQL database.
-
-## Steps:
-
-1. Start MySQL Server.
-
-2. Import the provided:
-
-```
-database.sql
-```
-
-file into MySQL.
-
-3. The SQL file creates:
-
-* `student_demo` database
-* Student registration table
-* Demonstration time slot table
-* Six available demonstration sections
-
-The database stores all student registration information and tracks the number of available seats for each time slot.
+1. First, start your MySQL server.
+2. Import the database.sql file into MySQL.
+3. The SQL file then creates:
+   -student_demo database
+   -students table
+   -timeslotstable
+   - Six demonstration time slots
 
 ---
 
-# Database Configuration
+## Database Configuration
 
-Open:
-
-```
-db.js
-```
-
-Update the MySQL connection settings if needed.
-
-Example:
+Open the `db.js` file and make sure the database connection matches your MySQL settings.
+For Example:
 
 ```javascript
 const connection = mysql.createConnection({
@@ -103,172 +77,86 @@ const connection = mysql.createConnection({
     port: 3306
 });
 ```
-
-If using AWS RDS, replace the host value with the RDS endpoint.
-
-Example:
-
-```
-studentdemo.xxxxx.us-east-1.rds.amazonaws.com
-```
-
 ---
 
-# Running the Project Locally
+## Running the Project
 
-## 1. Install Node.js
+1. Open the project folder in a terminal.
+2. Install the required packages:
 
-Download and install Node.js if it is not already installed.
-
-## 2. Open the project folder
-
-Open a terminal inside the project directory.
-
-## 3. Install dependencies
-
-Run:
-
-```
+```bash
 npm install
 ```
 
-## 4. Start the server
+3. Start the server:
 
-Run:
-
-```
+```bash
 node server.js
 ```
 
-## 5. Open the website
+4. Open your browser and go to:
 
-Navigate to:
-
-```
+```text
 http://localhost:3000
 ```
 
-The registration page will load.
+---
+
+## The Registration Features
+
+- Register for a demonstration time slot
+-View available seats for each time slot
+- Prevent registration for full time slots
+-Detect duplicate student IDs
+- Update an existing registration
+- Store student information in MySQL
+- View all registered students on a separate page
+-  Client-side form validation
 
 ---
 
-# Features Implemented
+## Validation
 
-* Student registration form
-* Student information stored in MySQL database
-* Six available demonstration time slots
-* Live seat availability display
-* Prevents registration for full sections
-* Duplicate student ID detection
-* Allows existing students to update registrations
-* Removes previous time slot assignment when changing sections
-* Displays all registered students
-* Client-side input validation
-* Server-side validation
-* Prepared SQL statements
-* Responsive webpage design
+The registration form checks that:
+-Student ID is exactly 8 digits
+-First name contains letters only
+-Last name contains letters only
+-Email is in a valid format
+- Phone number is in the format `999-999-9999`
+- Required fields are not left blank
+
+If there is an error, the incorrect field is highlighted, and the valid information stays on the page.
 
 ---
 
-# Validation Rules
+## Viewing Registered Students
 
-## Student ID
-
-* Must contain exactly 8 digits
-
-Example:
-
-```
-12345678
-```
-
-## First Name
-
-* Required
-* Alphabetic characters only
-
-## Last Name
-
-* Required
-* Alphabetic characters only
-
-## Email
-
-* Must follow a valid email format
-
-Example:
-
-```
-student@example.com
-```
-
-## Phone Number
-
-Must follow the format:
-
-```
-999-999-9999
-```
-
-Example:
-
-```
-248-555-1234
-```
+You can open students.html to see a list of all registered students.
+The page displays:
+- Student ID
+- Student Name
+- Project Title
+- Email Address
+- Phone Number
+- Registered Time Slot
 
 ---
 
-# Viewing Registered Students
+## Deployment
 
-The registered student list can be viewed through:
-
-```
-students.html
-```
-
-This page retrieves student information from the database and displays:
-
-* Student ID
-* Student name
-* Project title
-* Email
-* Phone number
-* Registered demonstration time slot
+The project can be deployed to a Node.js hosting service such as Render. Where the project was deployed by connecting the Git Hub repository. After deployment, update the database connection information in `db.js` so it connects to the hosted MySQL database instead of your local database.
 
 ---
 
-# Deployment
+## Browser
 
-The application can be deployed using services such as:
-
-* AWS Elastic Beanstalk
-* AWS RDS
-* Azure App Service
-* Other Node.js hosting platforms
-
-For deployment, make sure:
-
-* MySQL credentials are updated
-* Database connection points to the hosted database
-* Environment variables are configured if required
+The project was tested using Google Chrome and is successful. 
 
 ---
 
-# Browser Compatibility
+Afia Farook
 
-Tested on:
+CSC 5750
 
-* Google Chrome
-* Microsoft Edge
-* Firefox
-* Safari
+Project 3:Student Demo Registration
 
----
-
-# Author
-
-Student Name: Afia Farook
-
-Course: CSC 5750
-
-Project 3 – Student Demo Registration
