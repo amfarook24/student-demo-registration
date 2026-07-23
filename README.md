@@ -68,7 +68,7 @@ public/
 Open the `db.js` file and make sure the database connection matches your MySQL settings.
 For Example:
 
-```javascript
+javascript
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -76,7 +76,7 @@ const connection = mysql.createConnection({
     database: "student_demo",
     port: 3306
 });
-```
+
 ---
 
 ## Running the Project
@@ -84,15 +84,15 @@ const connection = mysql.createConnection({
 1. Open the project folder in a terminal.
 2. Install the required packages:
 
-```bash
+bash
 npm install
-```
+
 
 3. Start the server:
 
-```bash
+bash
 node server.js
-```
+
 
 4. Open your browser and go to:
 
@@ -144,7 +144,7 @@ The page displays:
 
 ## Deployment
 
-The project can be deployed to a Node.js hosting service such as Render. Where the project was deployed by connecting the Git Hub repository. After deployment, update the database connection information in `db.js` so it connects to the hosted MySQL database instead of your local database.
+The project can be deployed to a Node.js hosting service such as Render. Where the project was deployed by connecting the Git Hub repository. After deployment, update the database connection information in db.js so it connects to the hosted MySQL database instead of your local database.
 
 ---
 
