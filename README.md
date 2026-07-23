@@ -83,14 +83,10 @@ const connection = mysql.createConnection({
 
 1. Open the project folder in a terminal.
 2. Install the required packages:
-
-bash
 npm install
 
 
 3. Start the server:
-
-bash
 node server.js
 
 
