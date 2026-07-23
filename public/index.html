@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Demo Registration</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h1>Student Demo Registration</h1>
+<nav>
+
+<a href="/">Register</a>
+
+<a href="/students.html">View Registered Students</a>
+
+</nav>
+
+
+<form id="registrationForm">
+
+
+<label>Student ID</label>
+<input 
+type="text"
+id="student_id"
+name="student_id"
+placeholder="8 digit ID">
+
+
+<label>First Name</label>
+<input 
+type="text"
+id="first_name"
+name="first_name">
+
+
+<label>Last Name</label>
+<input 
+type="text"
+id="last_name"
+name="last_name">
+
+
+<label>Project Title</label>
+<input 
+type="text"
+id="project_title"
+name="project_title">
+
+
+<label>Email</label>
+<input 
+type="email"
+id="email"
+name="email">
+
+
+<label>Phone Number</label>
+<input 
+type="text"
+id="phone"
+name="phone"
+placeholder="999-999-9999">
+
+
+<label>Select Time Slot</label>
+
+<select id="timeslot_id" name="timeslot_id">
+
+<option>
+Loading available slots...
+</option>
+
+</select>
+
+
+<button type="submit">
+Register
+</button>
+
+
+</form>
+
+
+<div id="message"></div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
