@@ -118,7 +118,7 @@ The registration form checks that:
 -First name contains letters only
 -Last name contains letters only
 -Email is in a valid format
-- Phone number is in the format `999-999-9999`
+- Phone number is in the format 999-999-9999
 - Required fields are not left blank
 
 If there is an error, the incorrect field is highlighted, and the valid information stays on the page.
