@@ -65,7 +65,7 @@ public/
 
 ## Database Configuration
 
-Open the `db.js` file and make sure the database connection matches your MySQL settings.
+Open the db.js file and make sure the database connection matches your MySQL settings.
 For Example:
 
 javascript
